@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://xcx8qpy2524k"]
+
+[ext_resource type="Script" uid="uid://cjgvqw13nwr5d" path="res://scripts/WaveSpawner.gd" id="1_y5sxw"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_sew4s"]
+
+[node name="LevelTest" type="Node2D" unique_id=1546076823]
+script = ExtResource("1_y5sxw")
+
+[node name="CharacterBody2D" parent="." unique_id=248174615 instance=ExtResource("3_sew4s")]

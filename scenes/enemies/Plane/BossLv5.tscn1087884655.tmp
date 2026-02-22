@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://cmc2opayre43q"]
+
+[ext_resource type="Script" uid="uid://be3qbpboen770" path="res://scripts/BossLv5.gd" id="1_5lvhq"]
+[ext_resource type="Texture2D" uid="uid://tqb5fvuj6nwo" path="res://assets/spritesheets/BossGiantPlane_spritesheet.png" id="2_wv6ab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rba4p"]
+atlas = ExtResource("2_wv6ab")
+region = Rect2(0, 0, 633, 358)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m7e4"]
+atlas = ExtResource("2_wv6ab")
+region = Rect2(633, 0, 633, 358)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx217"]
+atlas = ExtResource("2_wv6ab")
+region = Rect2(0, 358, 633, 358)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxlts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rba4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m7e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx217")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"destruido",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rhnha"]
+radius = 13.0
+height = 48.0
+
+[node name="BossLv5" type="CharacterBody2D" unique_id=1761057567]
+script = ExtResource("1_5lvhq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438011639]
+sprite_frames = SubResource("SpriteFrames_kxlts")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=259508618]
+position = Vector2(-148, 19)
+shape = SubResource("CapsuleShape2D_rhnha")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=924470443]
+position = Vector2(145, 20)
+shape = SubResource("CapsuleShape2D_rhnha")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1616573666]
+autostart = true
+
+[node name="TimerFases" type="Timer" parent="." unique_id=239679514]
+autostart = true
+
+[node name="ShootPoints" type="Marker2D" parent="." unique_id=1644882831]
+position = Vector2(-85, 48)
+
+[node name="ShootPoints3" type="Marker2D" parent="." unique_id=361976590]
+position = Vector2(-214, 24)
+
+[node name="ShootPoints4" type="Marker2D" parent="." unique_id=1009774091]
+position = Vector2(214, 24)
+
+[node name="ShootPoints2" type="Marker2D" parent="." unique_id=1161623165]
+position = Vector2(80, 46)

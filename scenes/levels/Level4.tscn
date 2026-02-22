@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://34qqtewqmxd1"]
+
+[ext_resource type="Script" uid="uid://cqh7qdx8c3f5y" path="res://scripts/ParallaxBackground.gd" id="1_btbtd"]
+[ext_resource type="Script" uid="uid://j5gkfgem41j2" path="res://scripts/levels/Level4.gd" id="1_rrgde"]
+[ext_resource type="Texture2D" uid="uid://mw8jbsa4wad4" path="res://assets/sprites/levels/level_4_snow.png" id="2_btbtd"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_rrgde"]
+[ext_resource type="AudioStream" uid="uid://ctsl2wq4c84cf" path="res://assets/music/Level4.mp3" id="6_btbtd"]
+[ext_resource type="PackedScene" uid="uid://cubqvwv551h3p" path="res://scenes/ui/HUD.tscn" id="6_nxpvw"]
+[ext_resource type="Script" uid="uid://p70od53f00hk" path="res://scripts/EnemySpawnerLv4.gd" id="6_reskh"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="6_rrgde"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_reskh"]
+font = ExtResource("6_rrgde")
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0.64705884, 0, 0.93333334)
+
+[node name="Level4" type="Node2D" unique_id=1546076823]
+script = ExtResource("1_rrgde")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1452127105]
+script = ExtResource("1_btbtd")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=564029920]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=809222633]
+position = Vector2(961.00006, 540.87494)
+scale = Vector2(1.879367, 1.0549315)
+texture = ExtResource("2_btbtd")
+
+[node name="Player" parent="." unique_id=248174615 instance=ExtResource("3_rrgde")]
+
+[node name="Hud" parent="." unique_id=476129712 instance=ExtResource("6_nxpvw")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1608820497]
+stream = ExtResource("6_btbtd")
+autoplay = true
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=906397850]
+script = ExtResource("6_reskh")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=590683214]
+autostart = true
+
+[node name="Information4" type="Label" parent="." unique_id=968022284]
+offset_right = 197.0
+offset_bottom = 51.0
+text = "Misión 4
+Invierno de Fuego
+UB: Frontera de Gestokia del Sur"
+label_settings = SubResource("LabelSettings_reskh")

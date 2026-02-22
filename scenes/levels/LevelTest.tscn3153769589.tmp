@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://xcx8qpy2524k"]
+
+[ext_resource type="AudioStream" uid="uid://db7xi72uvw6e5" path="res://assets/music/Level1.mp3" id="2_b46i6"]
+[ext_resource type="Script" uid="uid://cqh7qdx8c3f5y" path="res://scripts/ParallaxBackground.gd" id="3_6ulrp"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_sew4s"]
+[ext_resource type="Script" uid="uid://cjaldwohbh07u" path="res://scripts/EnemySpawner.gd" id="4_mfton"]
+
+[node name="LevelTest" type="Node2D" unique_id=1546076823]
+
+[node name="CharacterBody2D" parent="." unique_id=248174615 instance=ExtResource("3_sew4s")]
+speed = 400.0
+fire_rate = 0.15
+entry_speed = 250.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1608820497]
+stream = ExtResource("2_b46i6")
+autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1452127105]
+script = ExtResource("3_6ulrp")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=564029920]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=1362235807]
+script = ExtResource("4_mfton")

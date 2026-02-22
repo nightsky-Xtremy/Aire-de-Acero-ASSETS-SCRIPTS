@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dkgtuxpybvbo4"]
+
+[ext_resource type="Script" uid="uid://djyivwemci1m6" path="res://scripts/interludios/Interludio6.gd" id="1_0um4r"]
+[ext_resource type="Texture2D" uid="uid://cmmu3h23fjjy8" path="res://assets/sprites/Cinematic/Interludio6.png" id="2_0um4r"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="3_kokd6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oifkp"]
+font = ExtResource("3_kokd6")
+font_size = 40
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Interludio6" type="Control" unique_id=1110055885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0um4r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=393560724]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1084.0
+texture = ExtResource("2_0um4r")
+
+[node name="Label" type="Label" parent="." unique_id=844919145]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.61
+anchor_bottom = 0.23600002
+offset_left = 32.0
+offset_top = 952.0
+offset_right = 700.7999
+offset_bottom = 827.12
+text = "Estamos en la capital de Gestokia del sur pero algo no pinta bien...Esperen, es el SK-X, la leyenda era cierta. CUIDADO!!!"
+label_settings = SubResource("LabelSettings_oifkp")
+autowrap_mode = 2
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=730127680]
+
+[node name="Timer" type="Timer" parent="." unique_id=511100859]

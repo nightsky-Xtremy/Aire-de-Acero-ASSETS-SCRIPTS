@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://c0rse2ibalfqx"]
+
+[ext_resource type="Texture2D" uid="uid://gp7mfvvcldmf" path="res://assets/sprites/MainMenu/MainMenu.jpg" id="1_2ysvc"]
+[ext_resource type="Script" uid="uid://0p3tgccffq0q" path="res://scripts/MainMenu.gd" id="1_xpiny"]
+[ext_resource type="AudioStream" uid="uid://bmqsj7u15xxjg" path="res://assets/music/Retro Again - Dj Xtremix.mp3" id="2_6jbdy"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="2_iwbf0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjtqc"]
+font = ExtResource("2_iwbf0")
+font_size = 50
+font_color = Color(1, 0.29803923, 0.09803922, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqw28"]
+
+[node name="MainMenu" type="Control" unique_id=102162741]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xpiny")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1961674854]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -136.0
+offset_right = 1968.0
+offset_bottom = 1224.0
+texture = ExtResource("1_2ysvc")
+
+[node name="Label" type="Label" parent="." unique_id=453733119]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 398.0
+offset_right = 1546.0
+offset_bottom = 467.0
+text = "Cielo de Acero: La Guerra de Kystovia"
+label_settings = SubResource("LabelSettings_vjtqc")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=612265666]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 336.0
+offset_bottom = 91.0
+text = "Music by Ribhav Agrawal from Pixabay
+
+Music by Dj Xtremix"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2023871622]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 545.0
+offset_right = 1154.0
+offset_bottom = 887.0
+alignment = 1
+
+[node name="Comenzar" type="Button" parent="VBoxContainer" unique_id=2092425947]
+layout_mode = 2
+text = "COMENZAR"
+
+[node name="Historia" type="Button" parent="VBoxContainer" unique_id=1888235889]
+layout_mode = 2
+text = "HISTORIA"
+
+[node name="Consejos" type="Button" parent="VBoxContainer" unique_id=1134211579]
+layout_mode = 2
+text = "CONSEJOS"
+
+[node name="Salir" type="Button" parent="VBoxContainer" unique_id=1962389943]
+layout_mode = 2
+text = "SALIR"
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=496052731]
+stream = ExtResource("2_6jbdy")
+autoplay = true
+parameters/looping = true
+
+[node name="menu transition" type="AnimationPlayer" parent="." unique_id=264987779]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=573456283]
+position = Vector2(1328, 816)
+sprite_frames = SubResource("SpriteFrames_nqw28")

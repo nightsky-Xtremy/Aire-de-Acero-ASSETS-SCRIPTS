@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://cmc2opayre43q"]
+
+[ext_resource type="Script" uid="uid://be3qbpboen770" path="res://scripts/BossLv5.gd" id="1_5lvhq"]
+[ext_resource type="Texture2D" uid="uid://tqb5fvuj6nwo" path="res://assets/spritesheets/BossGiantPlane_spritesheet.png" id="2_wv6ab"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rba4p"]
+atlas = ExtResource("2_wv6ab")
+region = Rect2(0, 0, 633, 358)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m7e4"]
+atlas = ExtResource("2_wv6ab")
+region = Rect2(633, 0, 633, 358)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx217"]
+atlas = ExtResource("2_wv6ab")
+region = Rect2(0, 358, 633, 358)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kxlts"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rba4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m7e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx217")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lvhq"]
+radius = 16.0
+height = 56.0
+
+[node name="BossLv5" type="CharacterBody2D" unique_id=1761057567]
+script = ExtResource("1_5lvhq")
+salud_max = null
+velocidad_patrulla = null
+altura_vuelo = null
+cadencia_f1 = null
+cadencia_f2 = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1438011639]
+sprite_frames = SubResource("SpriteFrames_kxlts")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563735476]
+position = Vector2(-148, 23)
+shape = SubResource("CapsuleShape2D_5lvhq")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=304073494]
+position = Vector2(145, 24)
+shape = SubResource("CapsuleShape2D_5lvhq")
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1616573666]
+wait_time = 0.201
+autostart = true
+
+[node name="TimerFases" type="Timer" parent="." unique_id=239679514]
+autostart = true
+
+[node name="ShootPoint1" type="Marker2D" parent="." unique_id=1644882831]
+position = Vector2(-85, 0)
+
+[node name="ShootPoint3" type="Marker2D" parent="." unique_id=361976590]
+position = Vector2(81, 0)
+
+[node name="ShootPoint4" type="Marker2D" parent="." unique_id=1009774091]
+position = Vector2(-192, 0)
+
+[node name="ShootPoint2" type="Marker2D" parent="." unique_id=1161623165]
+position = Vector2(191, 0)

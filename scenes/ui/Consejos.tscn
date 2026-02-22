@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://br5prkmgm6yox"]
+
+[ext_resource type="Texture2D" uid="uid://283o56sloed8" path="res://assets/sprites/Cinematic/Kystovia Airpor.png" id="1_irlxx"]
+[ext_resource type="Script" uid="uid://b1k2ami22c3v" path="res://scripts/Consejos.gd" id="1_omtv4"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="2_eno31"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_omtv4"]
+font = ExtResource("2_eno31")
+font_size = 46
+font_color = Color(3.7541986e-06, 0.69581586, 0.53922683, 1)
+shadow_size = 15
+shadow_color = Color(0.6627451, 0.039215688, 0.11372549, 0.76862746)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eno31"]
+font = ExtResource("2_eno31")
+font_size = 21
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Consejos" type="Node2D" unique_id=1383612318]
+script = ExtResource("1_omtv4")
+
+[node name="Consejos" type="CanvasLayer" parent="." unique_id=555232661]
+
+[node name="TextureRect" type="TextureRect" parent="Consejos" unique_id=624077446]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_irlxx")
+
+[node name="Label" type="Label" parent="Consejos/TextureRect" unique_id=1488666481]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 80.0
+offset_right = 1476.0
+offset_bottom = 184.0
+text = "Manual militar para pilotos kystovianos"
+label_settings = SubResource("LabelSettings_omtv4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Consejos/TextureRect" unique_id=1000295577]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 248.0
+offset_right = 1764.0
+offset_bottom = 531.0
+text = "1. Sistema de Propulsión (Movimiento)
+Tu aeronave utiliza un sistema de vectores para desplazarse por el espacio aéreo.
+
+Eje Horizontal (X): Usa las teclas Flechas Izquierda / Derecha. Sirve para esquivar ráfagas de balas enemigas.
+
+Eje Vertical (Y): Usa las teclas Flechas Arriba / Abajo. Ideal para ganar distancia o acercarte para un ataque rápido.
+
+Inercia Cero: Al soltar las teclas, los motores compensadores detendrán la nave en seco, permitiendo una precisión quirúrgica.
+
+2. Protocolo de Ataque (Disparo)
+El sistema de armas está calibrado para un flujo constante, pero requiere disciplina:
+
+Disparo Principal: Presiona la Barra Espaciadora
+
+3. Daño y Supervivencia
+Impacto Único: Tu nave es un interceptor ligero; un solo impacto enemigo resultará en la destrucción total."
+label_settings = SubResource("LabelSettings_eno31")
+vertical_alignment = 1
+
+[node name="Menu" type="Button" parent="Consejos/TextureRect" unique_id=292431806]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.096
+anchor_bottom = 0.059000004
+offset_left = 864.0
+offset_top = 640.0
+offset_right = 871.68
+offset_bottom = 640.27997
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Menú"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Consejos" unique_id=576490794]

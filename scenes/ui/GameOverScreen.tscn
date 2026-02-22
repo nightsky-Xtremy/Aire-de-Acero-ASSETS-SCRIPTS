@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cdk5v1spvfaij"]
+
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="1_0pcqs"]
+[ext_resource type="Script" uid="uid://3xmjo6xr6str" path="res://scripts/GameOverScreen.gd" id="1_wi470"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wi470"]
+font = ExtResource("1_0pcqs")
+font_size = 90
+font_color = Color(1, 0.08235294, 0.13725491, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5x6d"]
+font = ExtResource("1_0pcqs")
+font_size = 23
+font_color = Color(0.8, 0.34509805, 0.20392157, 1)
+
+[node name="GameOverScreen" type="CanvasLayer" unique_id=1102450019]
+process_mode = 3
+script = ExtResource("1_wi470")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1876853205]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=28285577]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 512.0
+offset_right = 1346.0
+offset_bottom = 663.0
+text = "MISIÓN FALLIDA"
+label_settings = SubResource("LabelSettings_wi470")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect" unique_id=1107882183]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.16700001
+anchor_bottom = 0.081
+offset_left = 512.0
+offset_top = 672.0
+offset_right = 1087.36
+offset_bottom = 648.52
+text = "Kystovia ha caido ante el poderio militar de Getoskia del Sur
+"
+label_settings = SubResource("LabelSettings_s5x6d")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reintentar" type="Button" parent="ColorRect" unique_id=2126095751]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.125
+anchor_bottom = 0.059000004
+offset_left = 704.0
+offset_top = 768.0
+offset_right = 656.0
+offset_bottom = 768.27997
+theme_override_colors/font_color = Color(0.18431373, 0.4862745, 0.09019608, 1)
+text = "Reintentar"
+
+[node name="Menu" type="Button" parent="ColorRect" unique_id=1513646988]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.096
+anchor_bottom = 0.059000004
+offset_left = 1024.0
+offset_top = 768.0
+offset_right = 1031.6799
+offset_bottom = 768.27997
+theme_override_colors/font_color = Color(0.1619122, 0.68011576, 7.70092e-07, 1)
+text = "Menú"
+
+[connection signal="pressed" from="ColorRect/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="ColorRect/Menu" to="." method="_on_regresar_menú_pressed"]

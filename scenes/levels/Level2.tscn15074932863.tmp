@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b8ano23rq8qq0"]
+
+[ext_resource type="Script" uid="uid://cqh7qdx8c3f5y" path="res://scripts/ParallaxBackground.gd" id="1_e5vnl"]
+[ext_resource type="Texture2D" uid="uid://b23kllfyj6ps" path="res://assets/sprites/levels/level_2_desierto.png" id="2_e5vnl"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_inlfm"]
+[ext_resource type="Script" uid="uid://cnjmdf8ts837g" path="res://scripts/EnemySpawnerLv2.gd" id="5_2p574"]
+[ext_resource type="AudioStream" uid="uid://b3mqkikqny8ja" path="res://assets/music/Level2.mp3" id="6_e5vnl"]
+
+[node name="Level2" type="Node2D" unique_id=1546076823]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1452127105]
+script = ExtResource("1_e5vnl")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=564029920]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=809222633]
+position = Vector2(959, 542)
+scale = Vector2(2.2629719, 0.8544304)
+texture = ExtResource("2_e5vnl")
+
+[node name="Player" parent="." unique_id=248174615 instance=ExtResource("3_inlfm")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1608820497]
+stream = ExtResource("6_e5vnl")
+autoplay = true
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=906397850]
+script = ExtResource("5_2p574")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=590683214]

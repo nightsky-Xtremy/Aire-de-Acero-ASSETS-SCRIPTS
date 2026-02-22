@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://brm0gitbf5hkl"]
+
+[ext_resource type="Script" uid="uid://bvvqf0wpssgae" path="res://scripts/interludios/Interludio5.gd" id="1_jwlxk"]
+[ext_resource type="Texture2D" uid="uid://cqy6lybrwwp3o" path="res://assets/sprites/Cinematic/Interludio5.png" id="2_jwlxk"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="3_wxoft"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_oifkp"]
+font = ExtResource("3_wxoft")
+font_size = 40
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Interludio5" type="Control" unique_id=1110055885]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jwlxk")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=393560724]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1084.0
+texture = ExtResource("2_jwlxk")
+
+[node name="Label" type="Label" parent="." unique_id=844919145]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.61
+anchor_bottom = 0.23600002
+offset_left = 32.0
+offset_top = 952.0
+offset_right = 700.7999
+offset_bottom = 827.12
+text = "Inteligencia de Gestokya del Norte nos da informes sobre un bombardero a punto de despegar de una base oculta en las afuera de la ciudad de capital de Cryctia, Gestokya del Sur."
+label_settings = SubResource("LabelSettings_oifkp")
+autowrap_mode = 2
+autowrap_trim_flags = 0
+uppercase = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=730127680]
+
+[node name="Timer" type="Timer" parent="." unique_id=511100859]

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://dvmm13aem1ray"]
+
+[ext_resource type="Script" uid="uid://cqh7qdx8c3f5y" path="res://scripts/ParallaxBackground.gd" id="1_178wb"]
+[ext_resource type="Script" uid="uid://b4k4p88dqu5nk" path="res://scripts/levels/Level6.gd" id="1_gpjci"]
+[ext_resource type="Texture2D" uid="uid://borks7u7e1a2o" path="res://assets/sprites/levels/Level6_capital.jpeg" id="3_0t8vj"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_mxr2w"]
+[ext_resource type="PackedScene" uid="uid://cubqvwv551h3p" path="res://scenes/ui/HUD.tscn" id="4_go52v"]
+[ext_resource type="AudioStream" uid="uid://cgjiuu5ak4dfn" path="res://assets/music/Level6.mp3" id="6_87aj8"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="6_178wb"]
+[ext_resource type="Script" uid="uid://6cqogexnn5bp" path="res://scripts/EnemySpawnerLv6.gd" id="7_mxr2w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gpjci"]
+font = ExtResource("6_178wb")
+font_color = Color(0.765004, 0.41315916, 1.1551381e-06, 1)
+shadow_color = Color(0, 0, 0, 0.93333334)
+
+[node name="Level6" type="Node2D" unique_id=1546076823]
+script = ExtResource("1_gpjci")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1452127105]
+script = ExtResource("1_178wb")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=564029920]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=809222633]
+position = Vector2(961.00006, 538.00006)
+scale = Vector2(1.879367, 0.70312506)
+texture = ExtResource("3_0t8vj")
+
+[node name="Player" parent="." unique_id=248174615 instance=ExtResource("3_mxr2w")]
+
+[node name="Hud" parent="." unique_id=476129712 instance=ExtResource("4_go52v")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1608820497]
+stream = ExtResource("6_87aj8")
+autoplay = true
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=906397850]
+script = ExtResource("7_mxr2w")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=590683214]
+
+[node name="Information6" type="Label" parent="." unique_id=302175269]
+offset_right = 197.0
+offset_bottom = 51.0
+text = "Misión 6
+Operación Definitive
+UB: Ciudad de Cryctia"
+label_settings = SubResource("LabelSettings_gpjci")

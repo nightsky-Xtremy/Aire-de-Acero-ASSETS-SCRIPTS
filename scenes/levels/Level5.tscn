@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ckp0yeq56ig77"]
+
+[ext_resource type="Script" uid="uid://de7pyubcq0t2i" path="res://scripts/levels/Level5.gd" id="1_8vmc0"]
+[ext_resource type="Script" uid="uid://cqh7qdx8c3f5y" path="res://scripts/ParallaxBackground.gd" id="1_g13nb"]
+[ext_resource type="Texture2D" uid="uid://n7l6rea04gxw" path="res://assets/sprites/levels/level_5_Fortaleza.png" id="2_g13nb"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_r415l"]
+[ext_resource type="PackedScene" uid="uid://cubqvwv551h3p" path="res://scenes/ui/HUD.tscn" id="4_4niwk"]
+[ext_resource type="AudioStream" uid="uid://c3fwux5qqrm6" path="res://assets/music/Level5.mp3" id="6_8vmc0"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="6_g13nb"]
+[ext_resource type="Script" uid="uid://d3tnid3rig2wj" path="res://scripts/EnemySpawnerLv5.gd" id="7_r415l"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8vmc0"]
+font = ExtResource("6_g13nb")
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0.64705884, 0, 0.93333334)
+
+[node name="Level5" type="Node2D" unique_id=1546076823]
+script = ExtResource("1_8vmc0")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1452127105]
+script = ExtResource("1_g13nb")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=564029920]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=809222633]
+position = Vector2(961.00006, 540.87494)
+scale = Vector2(1.879367, 1.0549315)
+texture = ExtResource("2_g13nb")
+
+[node name="Player" parent="." unique_id=248174615 instance=ExtResource("3_r415l")]
+
+[node name="Hud" parent="." unique_id=476129712 instance=ExtResource("4_4niwk")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1608820497]
+stream = ExtResource("6_8vmc0")
+autoplay = true
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=906397850]
+script = ExtResource("7_r415l")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=590683214]
+
+[node name="Information5" type="Label" parent="." unique_id=609890101]
+offset_right = 197.0
+offset_bottom = 51.0
+text = "Misión 5
+Bombardero a Tierra
+UB: Base Secreta del GST"
+label_settings = SubResource("LabelSettings_8vmc0")

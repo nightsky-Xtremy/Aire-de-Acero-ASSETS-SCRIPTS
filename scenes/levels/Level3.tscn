@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://cy1ad51io4wut"]
+
+[ext_resource type="Script" uid="uid://cqh7qdx8c3f5y" path="res://scripts/ParallaxBackground.gd" id="1_6qpip"]
+[ext_resource type="Script" uid="uid://ptldhpaghx3w" path="res://scripts/levels/Level3.gd" id="1_x3k3d"]
+[ext_resource type="Texture2D" uid="uid://vegd8dntkaab" path="res://assets/sprites/levels/level_3_mar.png" id="2_f3pvd"]
+[ext_resource type="PackedScene" uid="uid://dc2tj675v1w3k" path="res://scenes/player/Player.tscn" id="3_x3k3d"]
+[ext_resource type="PackedScene" uid="uid://cubqvwv551h3p" path="res://scenes/ui/HUD.tscn" id="4_3825t"]
+[ext_resource type="AudioStream" uid="uid://e4ik1kjbsk5q" path="res://assets/music/Level3.mp3" id="6_6qpip"]
+[ext_resource type="FontFile" uid="uid://crgn28fwsurca" path="res://assets/fonts/FontPixel.ttf" id="6_f3pvd"]
+[ext_resource type="Script" uid="uid://fqjxirupik0g" path="res://scripts/EnemySpawnerLv3.gd" id="6_x3k3d"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x3k3d"]
+font = ExtResource("6_f3pvd")
+font_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0.64705884, 0, 0.93333334)
+
+[node name="Level3" type="Node2D" unique_id=1546076823]
+script = ExtResource("1_x3k3d")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1452127105]
+script = ExtResource("1_6qpip")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=564029920]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=809222633]
+position = Vector2(961.00006, 540.87494)
+scale = Vector2(1.879367, 1.0549315)
+texture = ExtResource("2_f3pvd")
+
+[node name="Player" parent="." unique_id=248174615 instance=ExtResource("3_x3k3d")]
+
+[node name="Hud" parent="." unique_id=476129712 instance=ExtResource("4_3825t")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1608820497]
+stream = ExtResource("6_6qpip")
+autoplay = true
+
+[node name="EnemySpawner" type="Node2D" parent="." unique_id=906397850]
+script = ExtResource("6_x3k3d")
+
+[node name="Timer" type="Timer" parent="EnemySpawner" unique_id=590683214]
+
+[node name="Information3" type="Label" parent="." unique_id=2071027188]
+offset_right = 197.0
+offset_bottom = 51.0
+text = "Misión 3
+Lucha Maritima
+UB: Oceano Kysto-Gestok"
+label_settings = SubResource("LabelSettings_x3k3d")

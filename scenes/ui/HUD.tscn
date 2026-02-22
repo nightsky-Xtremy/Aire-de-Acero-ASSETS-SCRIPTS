@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cubqvwv551h3p"]
+
+[ext_resource type="Texture2D" uid="uid://rrhkbkw1o263" path="res://assets/HUD/Halcon7.png" id="1_kw0id"]
+[ext_resource type="Texture2D" uid="uid://73kv7ck0j62k" path="res://assets/HUD/Radar.png" id="2_atyv1"]
+
+[node name="Hud" type="CanvasLayer" unique_id=476129712]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=839396134]
+z_index = 10
+offset_top = 960.0
+offset_right = 128.0
+offset_bottom = 1083.0
+texture = ExtResource("1_kw0id")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1156283942]
+offset_left = 1728.0
+offset_top = 960.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_atyv1")
+expand_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=634335674]
+offset_right = 40.0
+offset_bottom = 40.0

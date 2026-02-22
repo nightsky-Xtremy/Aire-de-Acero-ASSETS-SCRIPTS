@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b286wegaxpsjc"]
+
+[ext_resource type="Script" uid="uid://dhgnbpnu7kh8l" path="res://scripts/EnemyBullet.gd" id="1_n8fy3"]
+[ext_resource type="Texture2D" uid="uid://b7yw1pnoalbxj" path="res://assets/sprites/Bullet/bullet.png" id="1_y0k0h"]
+[ext_resource type="AudioStream" uid="uid://bsriq7of43da1" path="res://assets/sfx/ShootEnemy.mp3" id="3_wo8ob"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8fy3"]
+size = Vector2(10, 30)
+
+[node name="EnemyBullet" type="Area2D" unique_id=430145425]
+collision_layer = 8
+script = ExtResource("1_n8fy3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2111599572]
+texture = ExtResource("1_y0k0h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1970147700]
+shape = SubResource("RectangleShape2D_n8fy3")
+
+[node name="ShootSoundEnemy" type="AudioStreamPlayer2D" parent="." unique_id=1303158368]
+stream = ExtResource("3_wo8ob")

@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bjgccdio2trx0"]
+
+[ext_resource type="Script" uid="uid://6tp0y1nma3pr" path="res://scripts/ShipEnemy.gd" id="1_djupy"]
+[ext_resource type="Texture2D" uid="uid://c6f1qno1t8jaf" path="res://assets/sprites/EnemyBarco/EnemyShip.png" id="2_jdfni"]
+[ext_resource type="Texture2D" uid="uid://dfycibgq8gr8j" path="res://assets/sprites/Destruido/EnemyShip_Destruido.png" id="3_djupy"]
+[ext_resource type="AudioStream" uid="uid://etcwhp3olva6" path="res://assets/sfx/Shoot.mp3" id="5_hvmm8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_djupy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jdfni")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_djupy")
+}],
+"loop": false,
+"name": &"destruido",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc2b8"]
+size = Vector2(210, 292.22217)
+
+[node name="EnemyShip" type="CharacterBody2D" unique_id=301387061]
+position = Vector2(-111, -534)
+scale = Vector2(0.9, 0.9)
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_djupy")
+health = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1426530038]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_djupy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=195764691]
+position = Vector2(0.55553436, -49.444458)
+shape = SubResource("RectangleShape2D_rc2b8")
+
+[node name="ShootPoint" type="Marker2D" parent="." unique_id=2049231013]
+position = Vector2(-14.3333435, 227)
+
+[node name="ShootPoint2" type="Marker2D" parent="." unique_id=1016653389]
+position = Vector2(14.444443, 227)
+
+[node name="ShootTimer" type="Timer" parent="." unique_id=1909528013]
+wait_time = 0.281
+autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1100267711]
+stream = ExtResource("5_hvmm8")
+volume_db = -2.0
